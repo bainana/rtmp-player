@@ -51,7 +51,7 @@ function playM3U8byGrindPlayer(src) {
         autoPlay: 'true',
         src: escape(src),
         scaleMode: 'letterbox',
-        plugin_hls: 'flashlsOSMF.swf',
+        plugin_hls: 'js/flashlsOSMF.swf',
         hls_debug: false,
         hls_debug2: false,
         hls_minbufferlength: -1,
@@ -72,18 +72,14 @@ function playM3U8byGrindPlayer(src) {
     var attributes = {
         id: 'player'
     };
-    swfobject.embedSWF('GrindPlayer.swf', 'player', '640', '480', '10.2', null, flashvars, params, attributes);
+    swfobject.embedSWF('/js/GrindPlayer.swf', 'player', '640', '480', '10.2', null, flashvars, params, attributes);
 }
 
 function playM3U8byVideoJS(src) {
     if (!videojsInitialized) {
         videojsInitialized = true;
-        var link = document.createElement('link');
-        link.href = '/player/videojs/video-js.css';
-        link.rel = 'stylesheet';
-        document.body.appendChild(link);
         var script = document.createElement('script');
-        script.src = 'videojs-hls-bundle.js';
+        script.src = '/js/videojs-hls-bundle.js';
         script.onload = function() {
             playM3U8byVideoJSCallback(src);
         };
@@ -129,7 +125,7 @@ function playRTMP(src) {
     var attributes = {
         id: 'player'
     };
-    swfobject.embedSWF('GrindPlayer.swf', 'player', '640', '480', '10.2', null, flashvars, params, attributes);
+    swfobject.embedSWF('/js/GrindPlayer.swf', 'player', '640', '480', '10.2', null, flashvars, params, attributes);
 }
 
 function playMP4(src) {

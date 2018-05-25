@@ -20,11 +20,12 @@
 <script src="js/main.js"></script>
 <script>
     function play() {
-        // var src = 'http://www.flashls.org/playlists/test_001/stream_1000k_48k_640x360.m3u8';
-        var src = 'rtmp://39.104.76.50:89/md';
+        var src = 'http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8';
+        // var src = 'rtmp://39.104.76.50:89/md';
+        // var src = 'rtmp://live.hkstv.hk.lxdns.com/live/hks';
         if (src) {
-            playRTMP(src);
-            // playM3U8(src);
+            // playRTMP(src);
+            playM3U8(src);
         }
         return false;
     }
