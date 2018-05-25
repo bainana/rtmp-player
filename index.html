@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+    <style>
+        .container{
+            position: relative;
+            width: 100%;
+            max-width: 752px;
+            height: 423px;
+            margin: 30px auto;
+            /*background: black;*/
+        }
+    </style>
+</head>
+<body>
+<script src="js/jquery.min.js"></script>
+<script src="js/swfobject.js"></script>
+<script src="js/main.js"></script>
+<script>
+    function play() {
+        // var src = 'http://www.flashls.org/playlists/test_001/stream_1000k_48k_640x360.m3u8';
+        var src = 'rtmp://39.104.76.50:89/md';
+        if (src) {
+            playRTMP(src);
+            // playM3U8(src);
+        }
+        return false;
+    }
+    $(document).ready(function() {
+        play();
+    });
+</script>
+<div class="container" id="player-container">
+    <div id="player"></div>
+    <div id="player-tip"></div>
+</div>
+</body>
+</html>
